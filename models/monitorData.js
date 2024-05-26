@@ -16,6 +16,11 @@ module.exports = (sequelize, DataTypes) => {
         type:DataTypes.FLOAT,
         allowNull:false,
       },
+      timestamp: {
+        type: DataTypes.DATE,
+        allowNull: false,
+        defaultValue: DataTypes.NOW
+      }
       
     });
   

@@ -16,6 +16,7 @@ app.use(express.json());
 connectToDatabase();
 
 app.use('/user', require('./rotues/userRoute'));
+app.use('/data',require('./rotues/dataRoute'))
 
 const server = http.createServer(app);
 const io = new Server(server, {
@@ -26,7 +27,7 @@ const io = new Server(server, {
 });
 
 
-const userSocketMap = new Map(); // Map to store user ID to socket ID
+const userSocketMap = new Map(); 
 
 
 io.use((socket, next) => {

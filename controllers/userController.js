@@ -46,7 +46,7 @@ const signup = async (req, res) => {
 
 const login = async (req, res) => {
     try {
-
+        console.log("herer")
         const { email, password } = req.body
         const user = await User.findOne({
             where: {

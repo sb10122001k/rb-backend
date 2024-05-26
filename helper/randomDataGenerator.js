@@ -17,11 +17,11 @@ const saveRandomData = async (io,userSocketMap) => {
         userId: user.id,
         temperature: data.temperature,
         humidity: data.humidity,
-        pressure: data.pressure
+        pressure: data.pressure,
+        timestamp: new Date()        
       });
       const socketId = userSocketMap.get(user.id);
       if (socketId) {
-        // Emit data to the specific user
         io.to(socketId).emit('newData', monitorData);
       }
     });
